@@ -1,15 +1,16 @@
 package com.example.ExternalApi.model;
 
 import lombok.Getter;
-import lombok.ToString;
+import lombok.Setter;
 
-@ToString
+@Setter
 @Getter
 public class OpenWeatherDto {
     private String name;
     private Main main;
     private Weather[] weather;
 
+    @Setter
     @Getter
     public static class Main {
         private double temp;
@@ -20,6 +21,7 @@ public class OpenWeatherDto {
         private int humidity;
     }
 
+    @Setter
     @Getter
     public static class Weather {
         private String description;
