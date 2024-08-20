@@ -1,7 +1,9 @@
 package com.example.ExternalApi.model;
 
 import lombok.Getter;
+import lombok.ToString;
 
+@ToString
 @Getter
 public class OpenWeatherDto {
     private String name;

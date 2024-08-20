@@ -1,0 +1,11 @@
+<config xmlns="http://www.ehcache.org/v3">
+    <cache-template name="externalApiCache">
+        <expiry>
+            <ttl unit="seconds">60</ttl>
+        </expiry>
+        <resources>
+            <offheap unit="MB">10</offheap>
+        </resources>
+    </cache-template>
+    <cache alias="externalApiCache" uses-template="externalApiCache"/>
+</config>

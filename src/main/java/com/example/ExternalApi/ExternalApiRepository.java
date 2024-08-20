@@ -4,6 +4,7 @@ import com.example.ExternalApi.model.OpenWeatherDto;
 import com.example.ExternalApi.model.WeatherDto;
 import io.github.cdimascio.dotenv.Dotenv;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
@@ -23,9 +24,9 @@ public class ExternalApiRepository {
 
     }
 
+    @Cacheable("externalData")
     public WeatherDto getExternalData(double lat, double lon) {
         OpenWeatherDto openWeatherDto = getGetDataFromExternalData("weather?lat={lat}&lon={lom}&appid={apiKey}&lang=pl&units=metric", OpenWeatherDto.class, lat, lon, API_KEY);
-        log.info("OpenWeatherDto: {}", openWeatherDto.toString());
         return WeatherDto.builder()
                 .temperature((float) openWeatherDto.getMain().getTemp())
                 .feelsLike((float) openWeatherDto.getMain().getFeels_like())
