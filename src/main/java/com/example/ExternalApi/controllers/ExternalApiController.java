@@ -1,5 +1,6 @@
-package com.example.ExternalApi;
+package com.example.ExternalApi.controllers;
 
+import com.example.ExternalApi.ExternalApiService;
 import com.example.ExternalApi.model.WeatherDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

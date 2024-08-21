@@ -1,9 +1,10 @@
 package com.example.ExternalApi.model;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
+@AllArgsConstructor
 @Getter
+@Setter
 @Builder
 public class WeatherDto {
     private float temperature;
@@ -13,4 +14,7 @@ public class WeatherDto {
     private int pressure;
     private int humidity;
     private String description;
+
+    public WeatherDto() {
+    }
 }

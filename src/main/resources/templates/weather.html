@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Informacja pogodowa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .weather-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .weather-info {
+            margin-bottom: 10px;
+        }
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Informacja pogodowa</h1>
+
+<div class="weather-container">
+    <div class="weather-info">
+        <span class="label">Temperatura:</span>
+        <span th:text="${weather.temperature} + ' °C'"></span>
+    </div>
+    <div class="weather-info">
+        <span class="label">Temperatura odczuwalna:</span>
+        <span th:text="${weather.feelsLike} + ' °C'"></span>
+    </div>
+    <div class="weather-info">
+        <span class="label">Min. Temperatura:</span>
+        <span th:text="${weather.minTemperature} + ' °C'"></span>
+    </div>
+    <div class="weather-info">
+        <span class="label">Max. Temperatura:</span>
+        <span th:text="${weather.maxTemperature} + ' °C'"></span>
+    </div>
+    <div class="weather-info">
+        <span class="label">Ciśnienie:</span>
+        <span th:text="${weather.pressure} + ' hPa'"></span>
+    </div>
+    <div class="weather-info">
+        <span class="label">Wilgotność:</span>
+        <span th:text="${weather.humidity} + ' %'"></span>
+    </div>
+    <div class="weather-info">
+        <span class="label">Podsumowanie:</span>
+        <span th:text="${weather.description}"></span>
+    </div>
+</div>
+
+</body>
+</html>
+
