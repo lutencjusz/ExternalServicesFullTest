@@ -21,7 +21,7 @@ public class ExternalApiRepository {
 
     RestTemplate restTemplate = new RestTemplate();
 
-    private <T> T getGetDataFromExternalData(String url, Class<T> responseType, Object... objects) {
+    public <T> T getGetDataFromExternalData(String url, Class<T> responseType, Object... objects) {
         return restTemplate.getForObject(URI + url, responseType, objects);
 
     }
