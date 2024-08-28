@@ -2,6 +2,7 @@ package com.example.ExternalApi.model;
 
 import lombok.*;
 
+@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
@@ -15,7 +16,4 @@ public class WeatherDto {
     private int pressure;
     private int humidity;
     private String description;
-
-    public WeatherDto() {
-    }
 }
